@@ -1,13 +1,13 @@
 .footer {
   margin: rem(15px) 0 rem(35px);
   &__wrapper {
-    @include mq(medium) {
+    @include mq(medium-large) {
       display: flex;
     }
   }
   &__first-row {
     text-align: center;
-    @include mq(medium) {
+    @include mq(medium-large) {
       text-align: start;
       flex: 1;
     }
@@ -28,7 +28,7 @@
     justify-content: center;
     gap: rem(10px);
     margin: rem(20px) 0;
-    @include mq(medium) {
+    @include mq(medium-large) {
       justify-content: flex-start;
     }
   }
@@ -43,9 +43,11 @@
   }
   &__second-row {
     text-align: center;
-    @include mq(medium) {
+    margin-top: rem(20px);
+    @include mq(medium-large) {
       text-align: start;
       flex: 3;
+      margin-top: 0;
     }
   }
   &__links-title {

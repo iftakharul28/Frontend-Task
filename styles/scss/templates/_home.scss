@@ -2,14 +2,14 @@
 .hero {
   margin: rem(65px) 0;
   &__wrapper {
-    @include mq(medium) {
+    @include mq(medium-large) {
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
   }
   &__first-row {
-    @include mq(medium) {
+    @include mq(medium-large) {
       max-width: rem(450px);
     }
   }
@@ -28,7 +28,7 @@
   &__second-row {
     background-color: $primary_background-white;
     margin-top: rem(25px);
-    @include mq(medium) {
+    @include mq(medium-large) {
       min-width: 500px;
       margin-top: 0;
     }
@@ -39,7 +39,10 @@
   }
 }
 .connect {
-  margin: rem(65px) 0;
+  margin: rem(55px) 0;
+  @include mq(medium-large) {
+    margin: rem(85px) 0;
+  }
   &__heading {
     text-align: center;
     font-size: rem($h3);
@@ -102,8 +105,10 @@
   }
 }
 .experience {
-  margin: rem(85px) 0;
-
+  margin: rem(55px) 0;
+  @include mq(medium-large) {
+    margin: rem(85px) 0;
+  }
   .container {
     overflow: hidden;
   }
@@ -256,7 +261,10 @@
   }
 }
 .slider {
-  margin: rem(35px) 0;
+  margin: rem(55px) 0;
+  @include mq(medium-large) {
+    margin: rem(75px) 0;
+  }
   overflow: hidden;
   &__heading {
     text-align: center;
