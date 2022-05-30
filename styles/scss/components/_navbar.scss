@@ -2,15 +2,42 @@
   padding: rem(10px) 0;
   margin: rem(15px) rem(25px);
   box-shadow: 0 0 rem(2px) rem(4px) rgba($secondary_background_dark, 0.1);
+  .container {
+    position: relative;
+  }
   &__wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
+  &__link-wrapper {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: rem(35px) rem(15px) rem(45px);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: $primary_background-white;
+    &--active {
+      display: flex;
+    }
+    @include mq(medium-large) {
+      display: inline;
+      position: static;
+      background-color: transparent;
+      padding: 0;
+    }
+  }
   &__link {
     color: $secondary_text;
-    &:not(:last-child) {
-      margin-right: rem(25px);
+    margin-bottom: rem(25px);
+    @include mq(medium-large) {
+      margin-bottom: 0;
+      &:not(:last-child) {
+        margin-right: rem(25px);
+      }
     }
   }
   &__icon {

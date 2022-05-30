@@ -43,28 +43,23 @@ const HeroSecondary = () => {
     <section className="hero-secondary">
       <div className="container">
         <div className="hero-secondary__wrapper">
-          <div className="hero-secondary__card-arrow">
+          <div className="hero-secondary__card-arrow hero-secondary__card-arrow--left">
             <MdOutlineArrowBackIos size={30} onClick={() => handleMove('l')} />
           </div>
-          <div className="hero-secondary__card-wrapper">
-            <div className="hero-secondary__card">
-              <div className="hero-secondary__card-main">
-                <div className="hero-secondary__card-image-wrapper">
-                  <img
-                    className="hero-secondary__card-image"
-                    src={photos[slideNumber].src}
-                    alt={photos[slideNumber].alt}
-                  />
-                </div>
-                <div className="hero-secondary__card-text-wrapper">
-                  <h3>{photos[slideNumber].title}</h3>
-                  <p>{photos[slideNumber].text}</p>
-                </div>
-              </div>
+          <div className="hero-secondary__card">
+            <div className="hero-secondary__card-image-wrapper">
+              <img
+                className="hero-secondary__card-image"
+                src={photos[slideNumber].src}
+                alt={photos[slideNumber].alt}
+              />
+            </div>
+            <div className="hero-secondary__card-text-wrapper">
+              <h3>{photos[slideNumber].title}</h3>
+              <p>{photos[slideNumber].text}</p>
             </div>
           </div>
-
-          <div className="hero-secondary__card-arrow">
+          <div className="hero-secondary__card-arrow hero-secondary__card-arrow--right">
             <MdArrowForwardIos size={30} onClick={() => handleMove('r')} />
           </div>
         </div>

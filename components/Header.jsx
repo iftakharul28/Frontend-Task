@@ -1,6 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
+import { AiOutlineMenu } from 'react-icons/ai';
+import { useStateContext } from '../context/StateContext';
 const Header = () => {
+  const { showNav, setShowNav } = useStateContext();
   return (
     <section className="header">
       <div className="container">
@@ -10,8 +13,19 @@ const Header = () => {
             <span className="header__lang header__lang--active">bn</span> /{' '}
             <span className="header__lang">en</span>
           </div>
+          <AiOutlineMenu
+            size={25}
+            className="header__icon"
+            onClick={() => setShowNav(!showNav)}
+          />
         </div>
-        <div className="header__wrapper">
+        <div
+          className={
+            showNav
+              ? 'header__wrapper header__wrapper--active'
+              : 'header__wrapper'
+          }
+        >
           <div className="header__link-wrapper">
             <Link href="/">
               <a className="header__link header__link--active">HOME</a>

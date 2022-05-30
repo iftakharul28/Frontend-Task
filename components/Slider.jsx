@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-creative';
-import { Autoplay, Pagination, Navigation, EffectCreative } from 'swiper';
+import { Pagination, Navigation, EffectCreative } from 'swiper';
 
 const Slider = () => {
   return (
@@ -29,24 +29,22 @@ const Slider = () => {
             type: 'bullets',
             clickable: true,
           }}
-          modules={[Autoplay, Pagination, Navigation, EffectCreative]}
+          modules={[Pagination, Navigation, EffectCreative]}
           className="slider__card-wrapper"
         >
-          <div>
-            {sliders.map(({ title, text, src }, i) => (
-              <SwiperSlide className="slider__card" key={i}>
-                <div className="slider__card-main">
-                  <div className="slider__card-image-wrapper">
-                    <img className="slider__card-image" src={src} alt={title} />
-                  </div>
-                  <div className="slider__card-text-wrapper">
-                    <h3>{title}</h3>
-                    <p>{text}</p>
-                  </div>
+          {sliders.map(({ title, text, src }, i) => (
+            <SwiperSlide className="slider__card" key={i}>
+              <div className="slider__card-main">
+                <div className="slider__card-image-wrapper">
+                  <img className="slider__card-image" src={src} alt={title} />
                 </div>
-              </SwiperSlide>
-            ))}
-          </div>
+                <div className="slider__card-text-wrapper">
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
         </Swiper>
         <div className="slider__card-arrow-wrapper">
           <div className="slider__card-arrow slider__card-arrow--left swiper-button-prev">

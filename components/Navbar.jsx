@@ -1,8 +1,9 @@
-import Link from 'next/link';
 import React from 'react';
-
+import Link from 'next/link';
 import { AiOutlineMenu } from 'react-icons/ai';
+import { useStateContext } from '../context/StateContext';
 const Navbar = () => {
+  const { showNav, setShowNav } = useStateContext();
   return (
     <header className="navbar">
       <div className="container">
@@ -14,7 +15,13 @@ const Navbar = () => {
               </a>
             </Link>
           </div>
-          <nav className="navbar__link-wrapper">
+          <nav
+            className={
+              showNav
+                ? 'navbar__link-wrapper navbar__link-wrapper--active'
+                : 'navbar__link-wrapper'
+            }
+          >
             <Link href="/">
               <a className="navbar__link">HOME</a>
             </Link>
@@ -35,7 +42,11 @@ const Navbar = () => {
               <a className="navbar__link">CONTACT US</a>
             </Link>
           </nav>
-          <AiOutlineMenu size={25} className="navbar__icon" />
+          <AiOutlineMenu
+            size={25}
+            className="navbar__icon"
+            onClick={() => setShowNav(!showNav)}
+          />
         </div>
       </div>
     </header>

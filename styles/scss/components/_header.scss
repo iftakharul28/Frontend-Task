@@ -1,5 +1,8 @@
 .header {
   padding: rem(25px) 0;
+  .container {
+    position: relative;
+  }
   &__top {
     display: flex;
     align-items: center;
@@ -13,30 +16,61 @@
       color: green;
     }
   }
+  &__icon {
+    @include mq(medium-large) {
+      display: none;
+    }
+  }
   &__wrapper {
-    display: flex;
+    display: none;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    padding: rem(35px) rem(15px) rem(45px);
+    background-color: $primary_background-white;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    @include mq(medium-large) {
+      display: flex;
+      background-color: transparent;
+      position: static;
+      padding: 0;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    &--active {
+      display: flex;
+    }
   }
   &__link {
     color: $secondary_text;
     &--active {
       color: $secondary_text_orange;
     }
-    &:not(:last-child) {
-      margin-right: rem(25px);
+    display: block;
+    margin-bottom: rem(25px);
+    text-align: center;
+    @include mq(medium-large) {
+      text-align: left;
+      display: inline;
+      &:not(:last-child) {
+        margin-bottom: 0;
+        margin-right: rem(25px);
+      }
     }
   }
   &__button-wrapper {
     background-color: $primary_background-white;
     border-radius: rem(55px);
-    padding: rem(15px) rem(30px);
+    padding: rem(15px) rem(18px);
     box-shadow: rem(2px) rem(4px) rgba($secondary_background_dark, 0.1);
   }
   &__button {
     border: none;
     background: transparent;
     padding: rem(10px) rem(20px);
+    font-weight: 600;
     cursor: pointer;
     &--active {
       background-color: $primary_background_orange;

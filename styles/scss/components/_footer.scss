@@ -1,10 +1,16 @@
 .footer {
   margin: rem(15px) 0 rem(35px);
   &__wrapper {
-    display: flex;
+    @include mq(medium) {
+      display: flex;
+    }
   }
   &__first-row {
-    flex: 1;
+    text-align: center;
+    @include mq(medium) {
+      text-align: start;
+      flex: 1;
+    }
   }
   &__heading {
     font-size: rem($h4);
@@ -19,8 +25,12 @@
   &__social-link-wrapper {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: rem(10px);
     margin: rem(20px) 0;
+    @include mq(medium) {
+      justify-content: flex-start;
+    }
   }
   &__social-link {
     height: 40px;
@@ -32,7 +42,11 @@
     cursor: pointer;
   }
   &__second-row {
-    flex: 3;
+    text-align: center;
+    @include mq(medium) {
+      text-align: start;
+      flex: 3;
+    }
   }
   &__links-title {
     margin-bottom: rem(20px);
@@ -40,10 +54,16 @@
     font-weight: 600;
   }
   &__links-wrapper {
-    display: flex;
+    @include mq(medium) {
+      display: flex;
+    }
   }
   &__links {
-    flex: 1;
+    margin-top: rem(35px);
+    @include mq(medium) {
+      margin-top: 0;
+      flex: 1;
+    }
   }
   &__link {
     display: block;

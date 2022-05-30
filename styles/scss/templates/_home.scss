@@ -2,20 +2,36 @@
 .hero {
   margin: rem(25px) 0;
   &__wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include mq(medium) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
   }
   &__first-row {
-    max-width: rem(450px);
+    @include mq(medium) {
+      max-width: rem(450px);
+    }
+  }
+  &__heading {
+    font-size: rem($h3);
+    color: $secondary_text;
+    @include mq(medium) {
+      font-size: rem($h2);
+    }
   }
   &__subheading {
     font-size: rem($h4);
     font-weight: 500;
+    color: $primary_text;
   }
   &__second-row {
     background-color: $primary_background-white;
-    min-width: 450px;
+    margin-top: rem(25px);
+    @include mq(medium) {
+      min-width: 500px;
+      margin-top: 0;
+    }
   }
   &__artwork {
     height: 100%;
@@ -26,12 +42,28 @@
   margin: rem(45px) 0;
   &__heading {
     text-align: center;
+    font-size: rem($h3);
+    color: $primary_text;
+    @include mq(medium) {
+      font-size: rem($h2);
+    }
   }
   &__icons {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-items: center;
-    margin-top: rem(70px);
+    margin-top: rem(30px);
+    @include mq(medium) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-items: center;
+      margin-top: rem(70px);
+    }
+  }
+  &__icon-wrapper {
+    &:not(:last-child) {
+      margin-bottom: rem(20px);
+    }
+    @include mq(medium) {
+      margin-bottom: 0;
+    }
   }
   &__icon {
     width: max-content;
@@ -65,16 +97,26 @@
     font-size: rem($h3);
     font-weight: 600;
     box-shadow: 2px 4px rgba($secondary_background_dark, 0.1);
+    display: table;
+    margin: 0 auto;
   }
 }
 .experience {
   margin: rem(65px) 0;
+  .container {
+    overflow: hidden;
+  }
   &__button-wrapper {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: rem(35px);
-    margin-bottom: rem(55px);
+    padding-bottom: rem(55px);
+    overflow-x: scroll;
+    scrollbar-width: none;
+    white-space: nowrap;
+    @include mq(medium) {
+      justify-content: center;
+    }
   }
   &__button {
     border: none;
@@ -93,9 +135,11 @@
     }
   }
   &__wrapper {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: rem(35px);
+    @include mq(medium) {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: rem(35px);
+    }
   }
   &__first-row {
     grid-column: 1/ 5;
@@ -114,6 +158,10 @@
   }
   &__second-row {
     grid-column: 5/ -1;
+    margin-top: rem(20px);
+    @include mq(medium) {
+      margin-top: 0;
+    }
   }
   &__info-wrapper {
     display: flex;
@@ -148,18 +196,30 @@
     color: $primary_background-white;
   }
   &__box-wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    place-items: center;
-    padding-top: rem(55px);
+    padding-top: rem(35px);
+    @include mq(medium) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      place-items: center;
+      padding-top: rem(55px);
+    }
   }
   &__box {
-    height: 250px;
-    width: 250px;
+    height: 200px;
+    width: 200px;
     border-radius: 50%;
     display: grid;
     place-items: center;
     border: 2px dashed $primary_background-white;
+    margin: 0 auto;
+    &:not(:last-child) {
+      margin-bottom: rem(25px);
+    }
+    @include mq(medium) {
+      margin: 0;
+      height: 250px;
+      width: 250px;
+    }
     &--bg-white {
       background-color: $primary_background-white;
       border: none;
@@ -170,19 +230,25 @@
     }
   }
   &__box-title {
-    font-size: rem($h2-md);
-    font-weight: 600;
-    color: $secondary_text;
-    text-align: center;
-    padding-bottom: rem(15px);
-  }
-  &__box-text {
     font-size: rem($h3-md);
     font-weight: 600;
     color: $secondary_text;
     text-align: center;
     padding-bottom: rem(15px);
+    @include mq(medium) {
+      font-size: rem($h2-md);
+    }
+  }
+  &__box-text {
+    font-size: rem($h4);
+    font-weight: 600;
+    color: $secondary_text;
+    text-align: center;
+    padding-bottom: rem(15px);
     text-shadow: 0 2px 3px 1px rgba($secondary_background_dark, 0.3);
+    @include mq(medium) {
+      font-size: rem($h3-md);
+    }
     &--white {
       color: $primary_background-white;
     }
@@ -213,19 +279,25 @@
   }
   &__card-wrapper {
     display: flex;
+    justify-content: center;
   }
   &__card {
-    flex: 0 0 55%;
+    flex: 0 0 85%;
     background-color: $primary_background-white;
     border-radius: rem(10px);
+    @include mq(medium-large) {
+      flex: 0 0 65%;
+    }
   }
   &__card-main {
     margin: rem(10px);
     padding: rem(10px);
     border-radius: rem(10px);
     border: 1px dotted $primary_background_orange;
-    display: flex;
-    gap: rem(45px);
+    @include mq(medium-large) {
+      display: flex;
+      gap: rem(45px);
+    }
   }
   &__card-image-wrapper {
     max-width: 280px;
@@ -236,10 +308,13 @@
     object-fit: contain;
   }
   &__card-arrow-wrapper {
-    display: flex;
-    justify-content: center;
-    gap: rem(65px);
-    margin: rem(35px) 0 0;
+    display: none;
+    @include mq(medium-large) {
+      display: flex;
+      justify-content: center;
+      gap: rem(65px);
+      margin: rem(35px) 0 0;
+    }
   }
   &__card-arrow {
     background-color: $primary_background-white;
@@ -254,16 +329,20 @@
 .hero-secondary {
   margin: rem(35px) rem(25px);
   box-shadow: 0 0 rem(2px) rem(4px) rgba($secondary_background_dark, 0.1);
+  overflow: hidden;
+  .container {
+    padding: 0;
+  }
   &__wrapper {
-    min-height: 80vh;
-    display: grid;
-    place-items: center;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    position: relative;
   }
   &__card {
-    position: relative;
+    max-height: 50vh;
+    display: grid;
+    place-items: center;
+    @include mq(medium-large) {
+      max-height: 80vh;
+    }
   }
   &__card-text-wrapper {
     position: absolute;
@@ -273,12 +352,39 @@
     z-index: 99;
     background-color: $primary_background;
     padding: rem(25px) rem(35px);
+    display: grid;
+    place-items: center;
+    @include mq(medium-large) {
+      width: 280px;
+      height: 180px;
+    }
+  }
+  &__card-image-wrapper {
+    width: 100%;
+    height: 100%;
   }
   &__card-image {
-    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   &__card-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 9999;
+    display: grid;
+    place-items: center;
+    height: rem(50px);
+    width: rem(50px);
+    border-radius: 50%;
+    background-color: $primary_background-white;
     cursor: pointer;
+    &--left {
+      left: rem(20px);
+    }
+    &--right {
+      right: rem(20px);
+    }
   }
 }
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
