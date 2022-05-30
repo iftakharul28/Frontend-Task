@@ -1,0 +1,50 @@
+.header {
+  padding: rem(25px) 0;
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: rem(15px);
+  }
+  &__lang {
+    text-transform: capitalize;
+    cursor: pointer;
+    &--active {
+      color: green;
+    }
+  }
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__link {
+    color: $secondary_text;
+    &--active {
+      color: $secondary_text_orange;
+    }
+    &:not(:last-child) {
+      margin-right: rem(25px);
+    }
+  }
+  &__button-wrapper {
+    background-color: $primary_background-white;
+    border-radius: rem(55px);
+    padding: rem(15px) rem(30px);
+    box-shadow: rem(2px) rem(4px) rgba($secondary_background_dark, 0.1);
+  }
+  &__button {
+    border: none;
+    background: transparent;
+    padding: rem(10px) rem(20px);
+    cursor: pointer;
+    &--active {
+      background-color: $primary_background_orange;
+      color: $primary_text_white;
+      border-radius: rem(35px);
+    }
+  }
+}
+//  style for IE Browser
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+}

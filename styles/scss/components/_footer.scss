@@ -1,0 +1,62 @@
+.footer {
+  margin: rem(15px) 0 rem(35px);
+  &__wrapper {
+    display: flex;
+  }
+  &__first-row {
+    flex: 1;
+  }
+  &__heading {
+    font-size: rem($h4);
+    font-weight: 600;
+    color: $secondary_text;
+  }
+  &__subheading {
+    margin: rem(20px) 0;
+    font-size: rem($h4);
+    color: $secondary_text;
+  }
+  &__social-link-wrapper {
+    display: flex;
+    align-items: center;
+    gap: rem(10px);
+    margin: rem(20px) 0;
+  }
+  &__social-link {
+    height: 40px;
+    width: 40px;
+    padding: rem(5px);
+    background-color: $secondary_background;
+    color: $primary_background-white;
+    border-radius: rem(10px);
+    cursor: pointer;
+  }
+  &__second-row {
+    flex: 3;
+  }
+  &__links-title {
+    margin-bottom: rem(20px);
+    font-size: rem($h4);
+    font-weight: 600;
+  }
+  &__links-wrapper {
+    display: flex;
+  }
+  &__links {
+    flex: 1;
+  }
+  &__link {
+    display: block;
+    font-size: rem($h4);
+    color: $primary_text;
+    &:not(:last-child) {
+      margin-bottom: rem(10px);
+    }
+  }
+  &__link-primary {
+    font-weight: 600;
+  }
+}
+//  style for IE Browser
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+}

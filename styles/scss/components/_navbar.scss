@@ -1,0 +1,19 @@
+.navbar {
+  padding: rem(10px) 0;
+  margin: rem(15px) rem(25px);
+  box-shadow: 0 0 rem(2px) rem(4px) rgba($secondary_background_dark, 0.1);
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__link {
+    color: $secondary_text;
+    &:not(:last-child) {
+      margin-right: rem(25px);
+    }
+  }
+  &__icon {
+    cursor: pointer;
+  }
+}

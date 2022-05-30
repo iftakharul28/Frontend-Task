@@ -1,0 +1,73 @@
+// Color Variables
+
+$primary_text: #404040;
+$secondary_text: #644f9c;
+$primary_text_light: #f2f2f2;
+$primary_text_white: #fff;
+$secondary_text_orange: #ff6f00;
+
+// Background color
+$primary_background: #f2f2f2;
+$secondary_background: #644f9c;
+$primary_background_orange: #ff6f00;
+$secondary_background_dark: #404040;
+$primary_background-white: #fff;
+
+// Icon color
+$primary_icon: #ffffff;
+$secondary_icon: #182642;
+
+// Others color
+$button_color: #644f9c;
+$button_color_orange: #ff6f00;
+$button_color_white: #f2f2f2;
+
+// Font Variables
+$h1: 48px;
+$h1-md: 38px;
+$h2: 38px;
+$h2-md: 30px;
+$h3: 22px;
+$h3-md: 20px;
+$h4: 18px;
+$h5: 16px;
+$h6: 15px;
+
+// Font-Weight Variables
+$medium: 500;
+$semi_bold: 600;
+$black: 900;
+
+// Font Variables
+$primary-font: 'Prototype', 'PT Sans', 'PT Sans Pro', -apple-system, system-ui,
+  sans-serif;
+
+/// Container's maximum width
+/// @type Length
+$max-width: 1920px !default;
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+  'extra-small': 320px,
+  'small': 640px,
+  'medium': 768px,
+  'medium-small': 980px,
+  'large': 1024px,
+  'medium-large': 1080px,
+  'extra-large': 1280px,
+  'double-extra-large': 1536px,
+) !default;
+
+// 1. Configuration and helpers
+@import 'abstracts/functions', 'abstracts/mixins';
+
+// 2. Base stuff
+@import 'base/normalize', 'base/typography', 'base/helpers';
+
+// 3. Components
+@import 'components/header', 'components/footer', 'components/navbar';
+
+// 4. templates
+@import 'templates/home';
