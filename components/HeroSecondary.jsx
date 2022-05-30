@@ -44,7 +44,7 @@ const HeroSecondary = () => {
       <div className="container">
         <div className="hero-secondary__wrapper">
           <div className="hero-secondary__card-arrow hero-secondary__card-arrow--left">
-            <MdOutlineArrowBackIos size={30} onClick={() => handleMove('l')} />
+            <MdOutlineArrowBackIos onClick={() => handleMove('l')} />
           </div>
           <div className="hero-secondary__card">
             <div className="hero-secondary__card-image-wrapper">
@@ -60,7 +60,7 @@ const HeroSecondary = () => {
             </div>
           </div>
           <div className="hero-secondary__card-arrow hero-secondary__card-arrow--right">
-            <MdArrowForwardIos size={30} onClick={() => handleMove('r')} />
+            <MdArrowForwardIos onClick={() => handleMove('r')} />
           </div>
         </div>
       </div>
