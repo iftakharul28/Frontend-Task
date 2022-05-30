@@ -298,14 +298,14 @@
   }
   &__card-wrapper {
     display: flex;
-    justify-content: center;
+    align-items: center;
   }
   &__card {
-    flex: 0 0 85%;
+    flex: 0 0 100%;
     background-color: $primary_background-white;
     border-radius: rem(10px);
     @include mq(medium-large) {
-      flex: 0 0 65%;
+      flex: 0 0 50%;
     }
   }
   &__card-main {

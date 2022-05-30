@@ -5,31 +5,40 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-creative';
-import { Pagination, Navigation, EffectCreative } from 'swiper';
+import { Pagination, Navigation } from 'swiper';
 
 const Slider = () => {
   return (
     <section className="slider">
       <div className="container">
         <h2 className="slider__heading">Specialized Services</h2>
-        <div className="slider__card-dot-wrapper swiper-pagination1"></div>
+        <div className="slider__card-dot-wrapper"></div>
         <Swiper
-          slidesPerView={2}
-          spaceBetween={30}
+          slidesPerView={1}
+          spaceBetween={20}
           direction={'horizontal'}
-          speed={500}
+          centeredSlides={true}
           loop={true}
           allowTouchMove={true}
           navigation={{
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+            nextEl: '.slider__card-arrow--right',
+            prevEl: '.slider__card-arrow--left',
+          }}
+          breakpoints={{
+            640: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            1024: {
+              slidesPerView: 2,
+              spaceBetween: 30,
+            },
           }}
           pagination={{
-            el: '.swiper-pagination1',
-            type: 'bullets',
+            el: '.slider__card-dot-wrapper',
             clickable: true,
           }}
-          modules={[Pagination, Navigation, EffectCreative]}
+          modules={[Pagination, Navigation]}
           className="slider__card-wrapper"
         >
           {sliders.map(({ title, text, src }, i) => (
@@ -47,11 +56,11 @@ const Slider = () => {
           ))}
         </Swiper>
         <div className="slider__card-arrow-wrapper">
-          <div className="slider__card-arrow slider__card-arrow--left swiper-button-prev">
+          <div className="slider__card-arrow slider__card-arrow--left">
             <MdOutlineArrowBackIos size={30} />
           </div>
 
-          <div className="slider__card-arrow slider__card-arrow--right swiper-button-next">
+          <div className="slider__card-arrow slider__card-arrow--right">
             <MdArrowForwardIos size={30} />
           </div>
         </div>
