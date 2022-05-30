@@ -39,8 +39,8 @@ const Slider = () => {
                   <img className="slider__card-image" src={src} alt={title} />
                 </div>
                 <div className="slider__card-text-wrapper">
-                  <h3>{title}</h3>
-                  <p>{text}</p>
+                  <h3 className="slider__card-heading">{title}</h3>
+                  <p className="slider__card-text">{text}</p>
                 </div>
               </div>
             </SwiperSlide>
